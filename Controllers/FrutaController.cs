@@ -30,7 +30,7 @@ public class FrutaController : ControllerBase
     }
 
     [HttpGet("multiple/{identificador}")]
-    public async Task<IActionResult> GetVarias(string identificador)
+    public async Task<IActionResult> GetVarios(string identificador)
     {
         string[] arrayIds = identificador.Split(',');
         var listaFrutas = new List<Fruta>();
@@ -53,7 +53,7 @@ public class FrutaController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetTodas()
+    public async Task<IActionResult> GetTodos()
     {
         var frutas = await _frutaService.ObtenerTodasLasFrutasAsync();
 

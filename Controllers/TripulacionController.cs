@@ -29,7 +29,7 @@ public class TripulacionController : ControllerBase
     }
 
     [HttpGet("multiple/{identificador}")]
-    public async Task<IActionResult> GetVarias(string identificador)
+    public async Task<IActionResult> GetVarios(string identificador)
     {
         string[] arrayIds = identificador.Split(',');
         var listaTripulaciones = new List<Tripulacion>();
@@ -53,7 +53,7 @@ public class TripulacionController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetTodas()
+    public async Task<IActionResult> GetTodos()
     {
         var tripulaciones = await _tripulacionService.ObtenerTodasLasTripulacionesAsync();
 

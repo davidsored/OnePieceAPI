@@ -29,7 +29,7 @@ public class EspadaController : ControllerBase
     }
 
     [HttpGet("multiple/{identificador}")]
-    public async Task<IActionResult> GetVariasEspada(string identificador)
+    public async Task<IActionResult> GetVarios(string identificador)
     {
         string[] arrayIds = identificador.Split(',');
         var listaEspadas = new List<Espada>();
@@ -52,7 +52,7 @@ public class EspadaController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetTodas()
+    public async Task<IActionResult> GetTodos()
     {
         var espadas = await _espadaService.ObtenerTodasLasEspadasAsync();
 

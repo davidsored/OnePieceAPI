@@ -36,7 +36,8 @@ Cada recurso sigue el mismo patrón:
 | Espadas        | `/api/Espada`             | `/v2/swords/en`                   |
 | Frutas         | `/api/Fruta`              | `/v2/fruits/en`                   |
 | Tripulaciones  | `/api/Tripulacion`        | `/v2/crews/en`                    |
-| Hakis          | `/api/Haki`               | `/v2/hakis`                       |
+| Hakis          | `/api/Haki`               | `/v2/hakis/en`                    |
+| Barcos         | `/api/Barco`              | `/v2/boats/en`                    |
 
 Cada recurso ofrece **3 endpoints** con la misma estructura:
 
@@ -56,6 +57,8 @@ GET /api/Personaje/multiple/1,2,3
 GET /api/Fruta/multiple/5,8
 GET /api/Tripulacion
 GET /api/Haki/1
+GET /api/Barco
+GET /api/Barco/1
 ```
 
 ---
@@ -74,7 +77,7 @@ GET /api/Haki/1
 
 ```
 OnePieceAPI/
-├── Controllers/        # Endpoints HTTP (Personaje, Espada, Fruta, Tripulacion, Haki)
+├── Controllers/        # Endpoints HTTP (Personaje, Espada, Fruta, Tripulacion, Haki, Barco)
 ├── Services/           # Interfaces + servicios que consumen la API externa
 ├── Models/             # Modelos de datos mapeados desde el JSON externo
 ├── Program.cs          # Configuración, DI y registro de los HttpClient

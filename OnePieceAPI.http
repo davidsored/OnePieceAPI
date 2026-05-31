@@ -1,6 +1,75 @@
 @OnePieceAPI_HostAddress = http://localhost:5278
 
-GET {{OnePieceAPI_HostAddress}}/weatherforecast/
+### Personajes
+GET {{OnePieceAPI_HostAddress}}/api/Personaje
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Personaje/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Personaje/multiple/1,2,3
+Accept: application/json
+
+### Espadas
+GET {{OnePieceAPI_HostAddress}}/api/Espada
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Espada/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Espada/multiple/1,2,3
+Accept: application/json
+
+### Frutas
+GET {{OnePieceAPI_HostAddress}}/api/Fruta
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Fruta/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Fruta/multiple/5,8
+Accept: application/json
+
+### Tripulaciones
+GET {{OnePieceAPI_HostAddress}}/api/Tripulacion
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Tripulacion/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Tripulacion/multiple/1,2,3
+Accept: application/json
+
+### Hakis
+GET {{OnePieceAPI_HostAddress}}/api/Haki
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Haki/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Haki/multiple/1,2,3
+Accept: application/json
+
+### Barcos
+GET {{OnePieceAPI_HostAddress}}/api/Barco
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Barco/1
+Accept: application/json
+
+###
+GET {{OnePieceAPI_HostAddress}}/api/Barco/multiple/1,2,3
 Accept: application/json
 
 ###

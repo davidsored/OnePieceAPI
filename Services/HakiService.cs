@@ -23,16 +23,16 @@ public class HakiService : IHakiService
         return null;
     }
 
-    public async Task<List<Haki?>> ObtenerTodosLosHakisAsync()
+    public async Task<List<Haki>> ObtenerTodosLosHakisAsync()
     {
         var respuesta = await _httpclient.GetAsync($"https://api.api-onepiece.com/v2/hakis/en");
         if (respuesta.IsSuccessStatusCode)
         {
             var haki = await respuesta.Content.ReadFromJsonAsync<List<Haki>>();
 
-            return haki ??new List<Haki?>();
+            return haki ?? new List<Haki>();
         }
 
-        return null;
+        return new List<Haki>();
     }
 }

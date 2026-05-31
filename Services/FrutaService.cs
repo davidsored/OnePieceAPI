@@ -24,16 +24,16 @@ public class FrutaService : IFrutaService
         
     }   
         
-    public async Task<List<Fruta?>> ObtenerTodasLasFrutasAsync()
+    public async Task<List<Fruta>> ObtenerTodasLasFrutasAsync()
     {
         var respuesta = await _httpclient.GetAsync("https://api.api-onepiece.com/v2/fruits/en");
         if (respuesta.IsSuccessStatusCode)
         {
             var frutas = await respuesta.Content.ReadFromJsonAsync<List<Fruta>>();
 
-            return frutas ?? new List<Fruta?>();
+            return frutas ?? new List<Fruta>();
         }
 
-        return null;        
+        return new List<Fruta>();
     }
 }

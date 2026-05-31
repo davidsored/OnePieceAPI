@@ -29,7 +29,7 @@ public class PersonajeController : ControllerBase
     }
 
     [HttpGet("multiple/{identificador}")]
-    public async Task<IActionResult> GetVariosPersonajes(string identificador)
+    public async Task<IActionResult> GetVarios(string identificador)
     {
         string[] arrayIds = identificador.Split(',');
         var listaPersonajes = new List<Personaje>();

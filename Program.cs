@@ -13,6 +13,7 @@ builder.Services.AddHttpClient<IPersonajeService, PersonajeService>();
 builder.Services.AddHttpClient<ITripulacionService, TripulacionService>();
 builder.Services.AddHttpClient<IFrutaService, FrutaService>();
 builder.Services.AddHttpClient<IHakiService, HakiService>();
+builder.Services.AddHttpClient<IBarcoService, BarcoService>();
 
 var app = builder.Build();
 

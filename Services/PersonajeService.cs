@@ -24,7 +24,7 @@ public class PersonajeService : IPersonajeService
         return null;
     }
 
-    public async Task<List<Personaje?>> ObtenerTodosLosPersonajesAsync()
+    public async Task<List<Personaje>> ObtenerTodosLosPersonajesAsync()
     {
         var respuesta = await _httpclient.GetAsync("https://api.api-onepiece.com/v2/characters/en");
 
@@ -35,6 +35,6 @@ public class PersonajeService : IPersonajeService
             return personajes ?? new List<Personaje>();
         }
 
-        return null;
+        return new List<Personaje>();
     }
 }

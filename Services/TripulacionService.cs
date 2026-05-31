@@ -24,9 +24,9 @@ public class TripulacionService : ITripulacionService
         return null;
     }
 
-    public async Task<List<Tripulacion?>> ObtenerTodasLasTripulacionesAsync()
-    {     
-        
+    public async Task<List<Tripulacion>> ObtenerTodasLasTripulacionesAsync()
+    {
+
         var respuesta = await _httpclient.GetAsync("https://api.api-onepiece.com/v2/crews/en");
 
         if (respuesta.IsSuccessStatusCode)
@@ -36,6 +36,6 @@ public class TripulacionService : ITripulacionService
             return tripulaciones ?? new List<Tripulacion>();
         }
 
-        return null;
+        return new List<Tripulacion>();
     }
 }

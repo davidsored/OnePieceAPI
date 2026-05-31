@@ -1,5 +1,4 @@
 using System.Net.Http.Json;
-using System.Runtime.InteropServices;
 using OnePieceAPI.Models;
 
 namespace OnePieceAPI.Services;
@@ -25,7 +24,7 @@ public class EspadaService : IEspadaService
         return null;
     }
 
-    public async Task<List<Espada?>> ObtenerTodasLasEspadasAsync()
+    public async Task<List<Espada>> ObtenerTodasLasEspadasAsync()
     {
         var respuesta = await _httpclient.GetAsync("https://api.api-onepiece.com/v2/swords/en");
 
@@ -36,6 +35,6 @@ public class EspadaService : IEspadaService
             return espadas ?? new List<Espada>();
         }
 
-        return null;
+        return new List<Espada>();
     }
 }
