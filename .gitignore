@@ -1,0 +1,38 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Ww][Ii][Nn]32/
+[Xx]64/
+[Xx]86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+bld/
+[Oo]ut/
+
+## .NET / Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+## Rider / JetBrains
+.idea/
+
+## VS Code
+.vscode/
+
+## Logs / temp
+*.log
+*.tmp
+
+## Secrets locales (no subir credenciales)
+appsettings.*.local.json
+secrets.json
