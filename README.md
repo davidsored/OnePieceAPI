@@ -5,6 +5,11 @@ API REST construida con **ASP.NET Core (.NET 10)** que actúa como *cliente/prox
 para aprender a **consumir APIs externas** desde un backend en C# usando `HttpClient`,
 inyección de dependencias y deserialización de JSON.
 
+![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
+![ASP.NET Core Web API](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-habilitada-6BA539?logo=openapiinitiative&logoColor=white)
+![Licencia MIT](https://img.shields.io/badge/licencia-MIT-green)
+
 > 🎓 Proyecto de práctica enfocado en la **comunicación entre APIs**: esta API recibe
 > peticiones, consulta a la API de One Piece, mapea la respuesta a modelos propios
 > (con nombres en español) y la devuelve al cliente.
@@ -97,7 +102,7 @@ OnePieceAPI/
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/<tu-usuario>/OnePieceAPI.git
+git clone https://github.com/davidsored/OnePieceAPI.git
 cd OnePieceAPI
 
 # 2. Restaurar dependencias
@@ -124,11 +129,55 @@ disponible en desarrollo:
 GET http://localhost:5278/openapi/v1.json
 ```
 
-Ejemplo con `curl`:
+### Ejemplo real de request/response
+
+Petición con `curl` (con la API corriendo en local):
 
 ```bash
 curl http://localhost:5278/api/Personaje/1
 ```
+
+Respuesta (`200 OK`, `application/json`):
+
+```json
+{
+  "id": 1,
+  "name": "Monkey D Luffy",
+  "job": "Captain",
+  "age": "19 ans",
+  "bounty": "3.000.000.000",
+  "status": "vivant",
+  "crew": {
+    "id": 1,
+    "name": "The Chapeau de Paille crew",
+    "description": null,
+    "status": "assets",
+    "number": "10",
+    "roman_name": "Mugiwara no Ichimi",
+    "total_prime": "3.161.000.100",
+    "is_yonko": true
+  },
+  "fruit": {
+    "id": 196,
+    "name": "Hito Hito no Mi, Nika model",
+    "roman_name": "Hito Hito no Mi, Moderu: Nika",
+    "type": "Zoan Mythique",
+    "description": "Hito Hito no Mi, Nika model, is a Mythical Zoan Demon Fruit that enables its user to transform into Nika, the \"God of the Sun\".",
+    "filename": null,
+    "technicalFile": null
+  }
+}
+```
+
+Dos detalles a tener en cuenta sobre esta respuesta:
+
+- Las **claves** del JSON conservan los nombres de la API externa porque los modelos usan
+  `[JsonPropertyName]`, que `System.Text.Json` aplica tanto al deserializar como al
+  serializar; los nombres en español viven en las propiedades de los modelos C#
+  (`Nombre`, `Recompensa`, `Tripulacion`...).
+- Los **valores** llegan tal cual los devuelve [api-onepiece.com](https://api-onepiece.com/)
+  (algunos campos vienen en francés, como `"age": "19 ans"`), por lo que pueden cambiar
+  si la API externa actualiza sus datos.
 
 ---
 
@@ -139,6 +188,12 @@ curl http://localhost:5278/api/Personaje/1
   devuelve `404` si **ninguno** de los IDs existe.
 - Este proyecto depende de la disponibilidad de la API externa
   [api-onepiece.com](https://api-onepiece.com/).
+
+---
+
+## 📄 Licencia
+
+MIT — ver [LICENSE](./LICENSE).
 
 ---
 
